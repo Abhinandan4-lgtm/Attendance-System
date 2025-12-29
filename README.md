@@ -135,15 +135,14 @@ To design a **smart attendance system** that:
 - Upload the code.
 
 ### Step 2: Install Python Dependencies
-    ```bash
     pip install -r requirements.txt
 
-###Step 3: Run Face Detection Script
+### Step 3: Run Face Detection Script
 python facedetection5thsem.py
 or (for laptop camera):
 python face-detection-inbuilt-camera.py
 
-###Step 4: Check Attendance
+### Step 4: Check Attendance
 Open Attendance.xlsx to view records.
 
 
