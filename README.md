@@ -43,7 +43,6 @@ A web-based interface allows real-time monitoring through a local IP address.
 ---
 
 ## 📁 Project Structure
-    ```text
     ATTENDANCE/
     │
     ├── CameraWebServer/
