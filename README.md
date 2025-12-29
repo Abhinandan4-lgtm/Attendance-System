@@ -43,43 +43,108 @@ A web-based interface allows real-time monitoring through a local IP address.
 ---
 
 ## 📁 Project Structure
-ESP32-CAM-Attendance-System/
-│── esp32_cam_code/
-│── python_face_detection/
-│── attendance_logs/
-│── screenshots/
-│── README.md
+    ```text
+    ATTENDANCE/
+    │
+    ├── CameraWebServer/
+    │ ├── CameraWebServer.ino # ESP32-CAM main firmware
+    │ ├── app_httpd.cpp # HTTP streaming and server logic
+    │ ├── camera_index.h # Web interface HTML
+    │ ├── camera_pins.h # ESP32-CAM pin configuration
+    │ ├── ci.json # Build / config file
+    │ ├── partitions.csv # Flash memory partition table
+    │
+    ├── image_folder/
+    │ └── (Captured images stored here)
+    │
+    ├── screenshots/
+    │ └── (Project output screenshots)
+    │
+    ├── Attendance.xlsx # Attendance record file
+    │
+    ├── facedetection5thsem.py # Face detection & attendance logic
+    │
+    ├── face-detection-inbuilt-camera.py
+    │ # Face detection using laptop camera
 
 
 ---
 
-## ▶️ How to Run
-1. Install ESP32 board support in Arduino IDE.
-2. Upload ESP32-CAM code using FTDI.
-3. Run the Python face detection script.
-4. Open the local IP address in a browser.
-5. View live feed and attendance logs.
+## 🎯 Project Objective
+
+To design a **smart attendance system** that:
+- Uses camera-based face detection
+- Automatically marks attendance
+- Stores attendance data digitally
+- Minimizes manual intervention and errors
 
 ---
 
-## 📸 Output
-- Live camera feed on browser
-- Face detection in real time
-- Attendance saved in CSV files
+## 🔧 Hardware Requirements
+
+- ESP32-CAM (AI Thinker module)
+- FTDI USB to TTL Programmer
+- USB Cable
+- Stable Power Supply
+- Laptop / PC
 
 ---
 
-## 🔐 Note
-This project focuses on functional implementation.
-Advanced security mechanisms are not included.
+## 💻 Software Requirements
+
+- Arduino IDE
+- Python 3.x
+- OpenCV
+- NumPy
+- Pandas
+- Excel (for attendance record)
 
 ---
 
-## 🔮 Future Improvements
-- Cloud-based attendance storage
-- Improved face recognition accuracy
-- Mobile application integration
+## ⚙️ Working Principle
 
+1. ESP32-CAM runs a camera web server.
+2. Live video or images are captured.
+3. Python script processes frames for face detection.
+4. Detected faces are matched.
+5. Attendance is marked automatically in an Excel file.
+
+---
+
+## 🧠 Modules Description
+
+### 🔹 ESP32-CAM Module
+- Captures images or video stream.
+- Hosts a local web server for camera access.
+
+### 🔹 Face Detection Module
+- Uses OpenCV Haar cascades.
+- Works with ESP32-CAM feed or inbuilt laptop camera.
+
+### 🔹 Attendance Management
+- Stores name, date, and time.
+- Saves data in an Excel sheet.
+
+---
+
+## 🧪 How to Run the Project
+
+### Step 1: Upload ESP32-CAM Code
+- Open `CameraWebServer.ino` in Arduino IDE.
+- Select correct board and COM port.
+- Upload the code.
+
+### Step 2: Install Python Dependencies
+    ```bash
+    pip install -r requirements.txt
+
+###Step 3: Run Face Detection Script
+python facedetection5thsem.py
+or (for laptop camera):
+python face-detection-inbuilt-camera.py
+
+###Step 4: Check Attendance
+Open Attendance.xlsx to view records.
 
 
 
